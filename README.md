@@ -5,15 +5,4 @@
 - 补充完善memory optimization，以及schedule primitive （Numpy部分的描述总共4页）
 - 实验部分 （2页）
 - 相关工作以及conclusion
-
-##### schedule
-###### 12.20-12.26
-- 了解torch/tensorflow jit流程，了解tvm基本概念和流程，完善background以及核心算法部分
-###### 12.21
-- 了解torch jit流程以及对于view的处理方式
-###### 12.22
-- 了解tensorflow jit流程以及对于view的处理方式
-###### 12.23
-- 了解tvm基本概念和流程
-###### 12.24-26
-- 论文撰写
+- 实验部分：elena vs tvm, elena vs 未使用优化的版本，elena vs jax vs torch vs tensorflow, 在不同GPU上的性能对比结果。
