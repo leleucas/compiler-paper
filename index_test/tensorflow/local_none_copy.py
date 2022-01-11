@@ -1,13 +1,8 @@
+import tensorflow as tf
 import time
-import torch
-import parrots
-from parrots.jit import pat
 import numpy as np
-import sys
 
-from parrots import save_json_temp
 
-@pat(coderize=True, full_shape=True)
 def local_none_copy(x, u, v):
     z = u + v
     w = z - v
@@ -21,15 +16,23 @@ if __name__ == "__main__":
     K = 9
     P = 1
 
-    # global int
-    x = torch.randn(M,N).cuda()
-    w = torch.randn(M).cuda()
-    u = torch.randn(M).cuda()
-    a = torch.randn(M,P).cuda()
-    b = torch.randn(M,P).cuda()
-    sargs_list = []
+    w = tf.random.uniform((M,))
+    u = tf.random.uniform((M,))
+    a = tf.random.uniform((M,P))
 
     sargs = [a, w, u]
-    fast_func = local_none_copy
-    assert parrots.allclose(fast_func(*sargs), fast_func._pyfunc(*sargs),
-            equal_nan=True)
+    fast_func = tf.function(local_none_copy, experimental_compile=True)
+
+    time1 = time.time()
+    for i in range(1000):
+        ret = local_none_copy(*sargs).numpy()
+    time2 = time.time()
+
+    print("tensorflow time: ", time2 - time1)
+
+    time1 = time.time()
+    for i in range(1000):
+        ret = fast_func(*sargs).numpy()
+    time2 = time.time()
+
+    print("xla time: ", time2 - time1)

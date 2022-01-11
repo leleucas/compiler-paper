@@ -1,13 +1,8 @@
+import tensorflow as tf
 import time
-import torch
-import parrots
-from parrots.jit import pat
 import numpy as np
-import sys
 
-from parrots import save_json_temp
 
-@pat(coderize=True, full_shape=True)
 def local_slice(x, y):
     z = x + y
     t = z[:,0:8:2] - z[:,1:9:2]
@@ -20,14 +15,22 @@ if __name__ == "__main__":
     K = 9
     P = 1
 
-    # global int
-    x = torch.randn(M,N).cuda()
-    w = torch.randn(M).cuda()
-    c = torch.randn(M, K).cuda()
-    d = torch.randn(M, K).cuda()
-    sargs_list = []
+    c = tf.random.uniform((M, K))
+    d = tf.random.uniform((M, K))
 
     sargs = [c, d]
-    fast_func = local_slice
-    assert parrots.allclose(fast_func(*sargs), fast_func._pyfunc(*sargs),
-            equal_nan=True)
+    fast_func = tf.function(local_slice, experimental_compile=True)
+
+    time1 = time.time()
+    for i in range(1000):
+        ret = local_slice(*sargs).numpy()
+    time2 = time.time()
+
+    print("tensorflow time: ", time2 - time1)
+
+    time1 = time.time()
+    for i in range(1000):
+        ret = fast_func(*sargs).numpy()
+    time2 = time.time()
+
+    print("xla time: ", time2 - time1)
