@@ -1,0 +1,12 @@
+#include "elena_int.h"
+extern "C" __global__ void coderop_0(float* __restrict__ Placeholder_0, float* __restrict__ Placeholder_1, float* __restrict__ Placeholder_2, float* __restrict__ Binary_2) {
+    const uint64_t iter7_iter8_fused = (((blockIdx.x * 64) + threadIdx.x) + 0);
+    const uint64_t iter8 = ((iter7_iter8_fused % max((uint64_t)max((uint64_t)max((uint64_t)4, (uint64_t)4), (uint64_t)4), (uint64_t)max((uint64_t)4, (uint64_t)4))) + 0);
+    const uint64_t iter7 = ((iter7_iter8_fused / max((uint64_t)max((uint64_t)max((uint64_t)4, (uint64_t)4), (uint64_t)4), (uint64_t)max((uint64_t)4, (uint64_t)4))) + 0);
+    if ((iter7 < (0 + max((uint64_t)max((uint64_t)max((uint64_t)256, (uint64_t)256), (uint64_t)256), (uint64_t)max((uint64_t)256, (uint64_t)256))))) {
+        if ((iter8 < (0 + max((uint64_t)max((uint64_t)max((uint64_t)4, (uint64_t)4), (uint64_t)4), (uint64_t)max((uint64_t)4, (uint64_t)4))))) {
+            Binary_2[((iter8 - 0) + (max((uint64_t)max((uint64_t)max((uint64_t)4, (uint64_t)4), (uint64_t)4), (uint64_t)max((uint64_t)4, (uint64_t)4)) * (iter7 - 0)))] = (((Placeholder_0[(((4 == 1) ? 0 : ((max((uint64_t)4, (uint64_t)4) == 1) ? 0 : ((max((uint64_t)max((uint64_t)4, (uint64_t)4), (uint64_t)4) == 1) ? 0 : iter8))) + (4 * ((256 == 1) ? 0 : ((max((uint64_t)256, (uint64_t)256) == 1) ? 0 : ((max((uint64_t)max((uint64_t)256, (uint64_t)256), (uint64_t)256) == 1) ? 0 : iter7)))))] + Placeholder_1[(((4 == 1) ? 0 : ((max((uint64_t)4, (uint64_t)4) == 1) ? 0 : ((max((uint64_t)max((uint64_t)4, (uint64_t)4), (uint64_t)4) == 1) ? 0 : iter8))) + (4 * ((256 == 1) ? 0 : ((max((uint64_t)256, (uint64_t)256) == 1) ? 0 : ((max((uint64_t)max((uint64_t)256, (uint64_t)256), (uint64_t)256) == 1) ? 0 : iter7)))))]) - Placeholder_1[(((4 == 1) ? 0 : ((max((uint64_t)max((uint64_t)4, (uint64_t)4), (uint64_t)4) == 1) ? 0 : iter8)) + (4 * ((256 == 1) ? 0 : ((max((uint64_t)max((uint64_t)256, (uint64_t)256), (uint64_t)256) == 1) ? 0 : iter7))))]) + ((((max((uint64_t)4, (uint64_t)4) == 1) ? 0 : iter8) == 3) ? (Placeholder_2[((max((uint64_t)256, (uint64_t)256) == 1) ? 0 : iter7)] + 0) : (Placeholder_0[(((4 == 1) ? 0 : ((max((uint64_t)4, (uint64_t)4) == 1) ? 0 : iter8)) + (4 * ((256 == 1) ? 0 : ((max((uint64_t)256, (uint64_t)256) == 1) ? 0 : iter7))))] + Placeholder_1[(((4 == 1) ? 0 : ((max((uint64_t)4, (uint64_t)4) == 1) ? 0 : iter8)) + (4 * ((256 == 1) ? 0 : ((max((uint64_t)256, (uint64_t)256) == 1) ? 0 : iter7))))])));
+        }
+    }
+}
+
