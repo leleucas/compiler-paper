@@ -1,5 +1,7 @@
 import time
 import torch
+import sys
+from typing import Tuple
 
 def xyxy2xywh(boxes):
     """(x1, y1, x2, y2) -> (x, y, w, h)"""
@@ -25,7 +27,7 @@ def bbox2offset(boxes, gt_boxes, weights=(1.0, 1.0, 1.0, 1.0)):
     return offset
 
 @torch.jit.script
-def fast_bbox2offset(boxes, gt_boxes, weights: tuple):
+def fast_bbox2offset(boxes, gt_boxes, weights: Tuple[float, float, float, float]):
     assert boxes.shape[0] == gt_boxes.shape[0]
     ex_ctr_x, ex_ctr_y, ex_widths, ex_heights = xyxy2xywh(boxes)
     gt_ctr_x, gt_ctr_y, gt_widths, gt_heights = xyxy2xywh(gt_boxes)
