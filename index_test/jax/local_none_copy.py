@@ -1,13 +1,10 @@
-import time
-import torch
-import parrots
-from parrots.jit import pat
+import jax.numpy as jnp
+from jax import jit, device_put
+from jax import random
 import numpy as np
-import sys
+import time
 
-from parrots import save_json_temp
 
-@pat(coderize=True, full_shape=True)
 def local_none_copy(x, u, v):
     z = u + v
     w = z - v
@@ -21,15 +18,26 @@ if __name__ == "__main__":
     K = 9
     P = 1
 
-    # global int
-    x = torch.randn(M,N).cuda()
-    w = torch.randn(M).cuda()
-    u = torch.randn(M).cuda()
-    a = torch.randn(M,P).cuda()
-    b = torch.randn(M,P).cuda()
-    sargs_list = []
+    w = np.random.randn(M).astype(np.float32)
+    u = np.random.randn(M).astype(np.float32)
+    a = np.random.randn(M,P).astype(np.float32)
+    w = device_put(w)
+    a = device_put(a)
+    u = device_put(u)
 
     sargs = [a, w, u]
-    fast_func = local_none_copy
-    assert parrots.allclose(fast_func(*sargs), fast_func._pyfunc(*sargs),
-            equal_nan=True)
+    fast_func = jit(local_none_copy)
+
+    time1 = time.time()
+    for i in range(1000):
+        local_none_copy(*sargs).block_until_ready()
+    time2 = time.time()
+
+    print("jax gpu time: ", time2 - time1)
+
+    time1 = time.time()
+    for i in range(1000):
+        fast_func(*sargs).block_until_ready()
+    time2 = time.time()
+
+    print("jax jit time: ", time2 - time1)

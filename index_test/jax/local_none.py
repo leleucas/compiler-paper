@@ -1,13 +1,9 @@
-import time
-import torch
-import parrots
-from parrots.jit import pat
+import jax.numpy as jnp
+from jax import jit, device_put
+from jax import random
 import numpy as np
-import sys
+import time
 
-from parrots import save_json_temp
-
-@pat(coderize=True, full_shape=True)
 def local_none(x, u, v):
     z = u + v
     t = z[:,None] - x
@@ -20,12 +16,26 @@ if __name__ == "__main__":
     P = 1
 
     # global int
-    x = torch.randn(M,N).cuda()
-    w = torch.randn(M).cuda()
-    u = torch.randn(M).cuda()
-    sargs_list = []
+    x = np.random.randn(M,N).astype(np.float32)
+    w = np.random.randn(M).astype(np.float32)
+    u = np.random.randn(M).astype(np.float32)
+    x = device_put(x)
+    w = device_put(w)
+    u = device_put(u)
 
     sargs = [x, w, u]
-    fast_func = local_none
-    assert parrots.allclose(fast_func(*sargs), fast_func._pyfunc(*sargs),
-            equal_nan=True)
+    fast_func = jit(local_none)
+
+    time1 = time.time()
+    for i in range(1000):
+        local_none(*sargs).block_until_ready()
+    time2 = time.time()
+
+    print("jax gpu time: ", time2 - time1)
+
+    time1 = time.time()
+    for i in range(1000):
+        fast_func(*sargs).block_until_ready()
+    time2 = time.time()
+
+    print("jax jit time: ", time2 - time1)

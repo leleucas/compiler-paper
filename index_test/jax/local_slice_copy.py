@@ -1,13 +1,9 @@
-import time
-import torch
-import parrots
-from parrots.jit import pat
+import jax.numpy as jnp
+from jax import jit, device_put
+from jax import random
 import numpy as np
-import sys
+import time
 
-from parrots import save_json_temp
-
-@pat(coderize=True, full_shape=True)
 def local_slice_copy(x, y):
     z = x + y
     m = z - y
@@ -21,14 +17,24 @@ if __name__ == "__main__":
     K = 9
     P = 1
 
-    # global int
-    x = torch.randn(M,N).cuda()
-    w = torch.randn(M).cuda()
-    c = torch.randn(M, K).cuda()
-    d = torch.randn(M, K).cuda()
-    sargs_list = []
+    c = np.random.randn(M, K).astype(np.float32)
+    d = np.random.randn(M, K).astype(np.float32)
+    c = device_put(c)
+    d = device_put(d)
 
     sargs = [c, d]
-    fast_func = local_slice_copy
-    assert parrots.allclose(fast_func(*sargs), fast_func._pyfunc(*sargs),
-            equal_nan=True)
+    fast_func = jit(local_slice_copy)
+
+    time1 = time.time()
+    for i in range(1000):
+        local_slice_copy(*sargs).block_until_ready()
+    time2 = time.time()
+
+    print("jax gpu time: ", time2 - time1)
+
+    time1 = time.time()
+    for i in range(1000):
+        fast_func(*sargs).block_until_ready()
+    time2 = time.time()
+
+    print("jax jit time: ", time2 - time1)
