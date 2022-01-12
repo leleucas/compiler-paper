@@ -1,0 +1,27 @@
+global_int
+torch time:  0.015915393829345703
+torch jit time:  0.15590286254882812
+global_none
+torch time:  0.015880823135375977
+torch jit time:  0.15153789520263672
+global_slice
+torch time:  0.021636247634887695
+torch jit time:  0.15691137313842773
+local_int_copy
+torch time:  0.025141477584838867
+torch jit time:  0.16864347457885742
+local_int
+torch time:  0.014928340911865234
+torch jit time:  0.04918074607849121
+local_none_copy
+torch time:  0.02953815460205078
+torch jit time:  0.16564297676086426
+local_none
+torch time:  0.015710830688476562
+torch jit time:  0.1553969383239746
+local_slice_copy
+torch time:  0.036698102951049805
+torch jit time:  0.17855000495910645
+local_slice
+torch time:  0.01652359962463379
+torch jit time:  0.05084538459777832

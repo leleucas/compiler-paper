@@ -1,0 +1,27 @@
+global_int
+jax gpu time:  1.2697033882141113
+jax jit time:  0.07881808280944824
+global_none
+jax gpu time:  0.3623168468475342
+jax jit time:  0.0758812427520752
+global_slice
+jax gpu time:  1.8960261344909668
+jax jit time:  0.08278393745422363
+local_int_copy
+    raise TypeError(msg.format(type(self)))
+TypeError: '<class 'jaxlib.xla_extension.DeviceArray'>' object does not support item assignment. JAX arrays are immutable. Instead of ``x[idx] = y``, use ``x = x.at[idx].set(y)`` or another .at[] method: https://jax.readthedocs.io/en/latest/jax.ops.html
+local_int
+jax gpu time:  1.3355531692504883
+jax jit time:  0.07969021797180176
+local_none_copy
+    raise TypeError(msg.format(type(self)))
+TypeError: '<class 'jaxlib.xla_extension.DeviceArray'>' object does not support item assignment. JAX arrays are immutable. Instead of ``x[idx] = y``, use ``x = x.at[idx].set(y)`` or another .at[] method: https://jax.readthedocs.io/en/latest/jax.ops.html
+local_none
+jax gpu time:  0.35956263542175293
+jax jit time:  0.07644271850585938
+local_slice_copy
+    raise TypeError(msg.format(type(self)))
+TypeError: '<class 'jaxlib.xla_extension.DeviceArray'>' object does not support item assignment. JAX arrays are immutable. Instead of ``x[idx] = y``, use ``x = x.at[idx].set(y)`` or another .at[] method: https://jax.readthedocs.io/en/latest/jax.ops.html
+local_slice
+jax gpu time:  1.3495304584503174
+jax jit time:  0.08569908142089844

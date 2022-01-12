@@ -1,0 +1,24 @@
+global_int
+tensorflow time:  0.2784578800201416
+xla time:  0.2937288284301758
+global_none
+tensorflow time:  0.24757647514343262
+xla time:  0.29758739471435547
+global_slice
+tensorflow time:  0.5348091125488281
+xla time:  0.29936718940734863
+local_int_copy
+TypeError: 'tensorflow.python.framework.ops.EagerTensor' object does not support item assignment
+local_int
+tensorflow time:  0.27477598190307617
+xla time:  0.2936575412750244
+local_none_copy
+TypeError: 'tensorflow.python.framework.ops.EagerTensor' object does not support item assignment
+local_none
+tensorflow time:  0.26347899436950684
+xla time:  0.2973206043243408
+local_slice_copy
+TypeError: 'tensorflow.python.framework.ops.EagerTensor' object does not support item assignment
+local_slice
+tensorflow time:  0.40091943740844727
+xla time:  0.2913532257080078

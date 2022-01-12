@@ -15,7 +15,7 @@ if __name__ == "__main__":
     P = 1
 
     x = tf.random.uniform((M,N))
-    w = tf.random.uniform((M))
+    w = tf.random.uniform((M,))
 
     sargs = [x, w]
     fast_func = tf.function(global_int, experimental_compile=True)
