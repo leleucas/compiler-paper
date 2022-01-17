@@ -18,4 +18,5 @@
 - jax，torchscript，xla： 许平
 - elena：丽娟
 4. ppt：讲清楚算法流程 丽娟
-5. 请教framework的pipeline，请教周洋
+5. 专利撰写
+6. 请教framework的pipeline，请教周洋
