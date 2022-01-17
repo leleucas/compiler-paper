@@ -14,7 +14,7 @@
 - mlir，torch：vtensor部分（许平，可以直接更新在introduction部分以及related work部分）
 - tensorIR：（钱超，可以直接更新在introduction部分以及related work部分）
 3. 实验部分
-- TVM：钱超
+- 整网测试
 - jax，torchscript，xla： 许平
 - elena：丽娟
 4. ppt：讲清楚算法流程 丽娟
