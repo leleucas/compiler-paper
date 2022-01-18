@@ -8,7 +8,6 @@
 - 实验部分：elena vs tvm, elena vs 未使用优化的版本，elena vs jax vs torch vs tensorflow, 在不同GPU上的性能对比结果。
 
 ##### 近期需求
-
 1. 确定文章结构，确定关键部分的说法
 2. 相关工作
 - mlir，torch：vtensor部分（许平，可以直接更新在introduction部分以及related work部分）
@@ -21,3 +20,6 @@
 5. 专利撰写
 6. 请教framework的pipeline，请教周洋
 7. 时间安排
+
+###### 思路
+1.在introduction部分需要说明，一方面用户依赖于深度学习框架提供的api，便捷设计开发新的网络，另一方面，由于python的动态语言特性，编译器往往只能支持部分的python，提供在线编译优化方法。往往算子融合带来主要的性能提升。编译器在python语法方面的表达以及优化对于性能优化带来主要的性能提升。
