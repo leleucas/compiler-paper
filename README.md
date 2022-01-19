@@ -27,3 +27,6 @@ abstract:
 神经网络中除了包含经典的耗时算子convolution外，一些网络层包。。。。，可能非常耗时。如目标检测网络中的后处理阶段往往能占据总网络的30-60%。含大量由pythonic grammitical feature构成的网络层，我们发现view是一种常见的操作，并且在python中，view也是一种基本和重要的优化方法。另一方面，AI算法研究员通常依赖于深度学习框架，深度学习框架耗时算子调用第三方库，而通过深度学习编译器提供在线编译功能，基于Python语言的动态特性，往往只能支持部分的语法特征，并通过算子融合来以及端上的代码生成方式。能够融合越多的算子，性能越高。fit for the ever-changing requirements。 但是对于view的支持却有很多不足，例如XLA， torchscript等。TVM
 
 1.在introduction部分需要说明，一方面用户依赖于深度学习框架提供的api，便捷设计开发新的网络，另一方面，由于python的动态语言特性，编译器往往只能支持部分的python，提供在线编译优化方法。往往算子融合带来主要的性能提升。编译器在python语法方面的表达以及优化对于性能优化带来主要的性能提升。
+
+###### 存疑
+1. 非卷积层网络。non-convolutional layers? light-weight layers. 希望强调非计算密集性的网络层。
