@@ -33,3 +33,5 @@ abstract:
 
 ###### 存疑
 1. 非卷积层网络。non-convolutional layers? light-weight layers. 希望强调非计算密集性的网络层。
+2. 除了cudnn，cublas，查阅其他硬件厂商优化的深度学习算子库。
+3. introduction第二段view的解释需不需要那么详细
