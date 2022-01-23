@@ -33,6 +33,15 @@ abstract:
 intermediate representation
 我们采用了跟numpy array中一样的存储模型。解释在tvm中tensor的局限性。解释添加metadata来，shape，stride，offset，storage——object来表示不同的view信息，分别解释属性的意义。解释添加属性dde以表示数据依赖关系。
 
+tensor creation
+是否需要生成新的张量是根据当前张量是否需要更新metada中的shape，stride，offset信息，以及当前张量中记录的是否是最新的写操作。上述六种张量中只有第2个是不需要新生成张量的，其他都需要创建新的张量。
+首先描述所有新增的算子需要更新正确的stride，offset，shape信息【表格中列出对应关系，这里可能需要详细说】，storage address是相同的。
+按照图中举例说明新生成张量的过程。分别阐述不同情况下是否需要新生成张量，以及不同情况下生成过程中对于ddt的更新。
+
+数据依赖关系主要包含哪些。ddt的构成。辅助记录最新的写操作或者读操作。例举每种view在生成时的记录以及dde更新方法。
+
+
+
 
 ###### 存疑
 1. 非卷积层网络。non-convolutional layers? light-weight layers. 希望强调非计算密集性的网络层。
