@@ -38,12 +38,23 @@ tensor creation
 首先描述所有新增的算子需要更新正确的stride，offset，shape信息【表格中列出对应关系，这里可能需要详细说】，storage address是相同的。
 按照图中举例说明新生成张量的过程。分别阐述不同情况下是否需要新生成张量，以及不同情况下生成过程中对于ddt的更新。
 
-数据依赖关系主要包含哪些。ddt的构成。辅助记录最新的写操作或者读操作。例举每种view在生成时的记录以及dde更新方法。
+数据依赖关系主要包含哪些。ddt的构成。辅助记录最新的写操作或者读操作。例举每种view在生成时的记录以及dde更新方法。 
+
+operation graph
+Generally，需要构建operation 有向无环图，并给出operation的拓扑序列，基于该拓扑序列，对operation嵌入优化信息。有向无环图的节点是operation，边是张量，边的入口是生成张量的算子，出口是读取该
+张量的operation。在没有view的情况下，可基于operation中存储的输入张量关联关系构建该有向五环图，但是由于view in-place引发的问题，在边构建的时候需要考虑由于WAW以及RAW的关联关系，即记录在dde中
+。例如，图所示为源代码构建的有向无环图，图中所有实线表示的边都是基于表达式的RAW关系构建的边，而虚线构建的边则是基于存储在dde关联关系构建的边。
 
 
+TODO
+RAR 关系忘记考虑了，需要在算法描述中更新
 
 
 ###### 存疑
 1. 非卷积层网络。non-convolutional layers? light-weight layers. 希望强调非计算密集性的网络层。
 2. 除了cudnn，cublas，查阅其他硬件厂商优化的深度学习算子库。
 3. introduction第二段view的解释需不需要那么详细
+4. 待澄清 numpy array 和 compiler 中的tensor在本文中可互换
+5. 仅基于表达式构建的有向五环图，这里的边是由于RAW引起的数据依赖关系。
+6. 需不需要DFS算法
+
