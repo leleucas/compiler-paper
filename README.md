@@ -65,3 +65,8 @@ RAR 关系忘记考虑了，需要在算法描述中更新
 文章的切入点：
 introduction 部分对于tvm的描述过于简单，单独对tvm进行描述【揪出view的问题】
 
+1. torchscript，jax部分数据不准确
+2. 实验部分：罗列出一个表格，统计出每个case来源于哪个网络，view有哪些操作【参考dlbench】为bechmark取一个名字。
+3. 修改下introduction的第一段
+
+
