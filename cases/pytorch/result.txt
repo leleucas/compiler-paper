@@ -1,0 +1,43 @@
+bbox2offset.py
+time costing pytorch: 2.242258071899414
+time costing torchscript: 0.47388458251953125
+delta2bbox.py
+/home/xuping/compiler-paper/cases/pytorch/delta2bbox.py:15: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than tensor.new_tensor(sourceTensor).
+  means = deltas.new_tensor(means).repeat(1, deltas.size(1) // 4)
+/home/xuping/compiler-paper/cases/pytorch/delta2bbox.py:16: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than tensor.new_tensor(sourceTensor).
+  stds = deltas.new_tensor(stds).repeat(1, deltas.size(1) // 4)
+/home/xuping/compiler-paper/cases/pytorch/delta2bbox.py:31: UserWarning: This overload of addcmul is deprecated:
+	addcmul(Tensor input, Number value, Tensor tensor1, Tensor tensor2, *, Tensor out)
+Consider using one of the following signatures instead:
+	addcmul(Tensor input, Tensor tensor1, Tensor tensor2, *, Number value, Tensor out) (Triggered internally at  ../torch/csrc/utils/python_arg_parser.cpp:1053.)
+  gx = torch.addcmul(px, 1, pw, dx)  # gx = px + pw * dx
+time costing torch: 5.349216461181641
+time costing torchScript: 9.059906005859375e-06
+gen_base_anchors.py
+time costing pytorch: 1.8393409252166748
+time costing torchscript: 0.8422307968139648
+map_roi_levels.py
+time costing pytorch: 0.7858827114105225
+time costing torchscript: 0.3221304416656494
+offset2bbox.py
+time costing pytorch: 3.6972591876983643
+time costing torchscript: 3.4720981121063232
+tblr2bbox.py
+time costing origin: 1.564375877380371
+time costing coderized: 0.9873411655426025
+valid_flags.py
+Traceback (most recent call last):
+  File "/home/xuping/compiler-paper/cases/pytorch/valid_flags.py", line 31, in <module>
+    def fast_valid(featmap_size: tuple, valid_size: tuple, num_base_anchors: int, device='cuda'):
+  File "/home/xuping/.conda/envs/pytorch/lib/python3.9/site-packages/torch/jit/_script.py", line 1318, in script
+    fn = torch._C._jit_script_compile(
+RuntimeError: 
+Provided tuple is not fully defined/refined including its element types, please provide a value of type like Tuple[int, int]:
+  File "/home/xuping/compiler-paper/cases/pytorch/valid_flags.py", line 32
+@torch.jit.script
+def fast_valid(featmap_size: tuple, valid_size: tuple, num_base_anchors: int, device='cuda'):
+    feat_h, feat_w = featmap_size
+                     ~~~~~~~~~~~~ <--- HERE
+    valid_h, valid_w = valid_size
+    assert valid_h <= feat_h and valid_w <= feat_w
+

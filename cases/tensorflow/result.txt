@@ -1,0 +1,100 @@
+bbox2offset.py
+2022-01-24 14:28:00.095686: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-01-24 14:28:01.429367: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30985 MB memory:  -> device: 0, name: Tesla V100-SXM2-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+2022-01-24 14:28:01.434433: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 30985 MB memory:  -> device: 1, name: Tesla V100-SXM2-32GB, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-01-24 14:28:02.078590: I tensorflow/compiler/xla/service/service.cc:171] XLA service 0x56261d703ef0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2022-01-24 14:28:02.078626: I tensorflow/compiler/xla/service/service.cc:179]   StreamExecutor device (0): Tesla V100-SXM2-32GB, Compute Capability 7.0
+2022-01-24 14:28:02.078633: I tensorflow/compiler/xla/service/service.cc:179]   StreamExecutor device (1): Tesla V100-SXM2-32GB, Compute Capability 7.0
+2022-01-24 14:28:02.190858: I tensorflow/compiler/jit/xla_compilation_cache.cc:351] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Num GPUs Available:  2
+time tensorflow: 9.02884817123413
+time xla: 1.7830560207366943
+delta2bbox.py
+2022-01-24 14:28:15.060804: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-01-24 14:28:16.336836: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30985 MB memory:  -> device: 0, name: Tesla V100-SXM2-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+2022-01-24 14:28:16.339441: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 30985 MB memory:  -> device: 1, name: Tesla V100-SXM2-32GB, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-01-24 14:28:17.107767: I tensorflow/compiler/xla/service/service.cc:171] XLA service 0x5621de0f4010 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2022-01-24 14:28:17.107802: I tensorflow/compiler/xla/service/service.cc:179]   StreamExecutor device (0): Tesla V100-SXM2-32GB, Compute Capability 7.0
+2022-01-24 14:28:17.107811: I tensorflow/compiler/xla/service/service.cc:179]   StreamExecutor device (1): Tesla V100-SXM2-32GB, Compute Capability 7.0
+2022-01-24 14:28:17.117001: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:237] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2022-01-24 14:28:17.207390: I tensorflow/compiler/jit/xla_compilation_cache.cc:351] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+gen_base_anchors.py
+map_roi_levels.py
+offset2bbox.py
+tblr2bbox.py
+valid_flags.py
+bbox2offset.py
+2022-01-24 14:28:38.215103: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-01-24 14:28:38.936215: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30985 MB memory:  -> device: 0, name: Tesla V100-SXM2-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+2022-01-24 14:28:39.574787: I tensorflow/compiler/xla/service/service.cc:171] XLA service 0x5578fe953240 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2022-01-24 14:28:39.574821: I tensorflow/compiler/xla/service/service.cc:179]   StreamExecutor device (0): Tesla V100-SXM2-32GB, Compute Capability 7.0
+2022-01-24 14:28:39.692057: I tensorflow/compiler/jit/xla_compilation_cache.cc:351] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Num GPUs Available:  1
+time tensorflow: 9.156066656112671
+time xla: 1.8176236152648926
+delta2bbox.py
+2022-01-24 14:28:52.373596: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-01-24 14:28:53.061439: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30985 MB memory:  -> device: 0, name: Tesla V100-SXM2-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+2022-01-24 14:28:53.815083: I tensorflow/compiler/xla/service/service.cc:171] XLA service 0x55cb197a7300 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2022-01-24 14:28:53.815118: I tensorflow/compiler/xla/service/service.cc:179]   StreamExecutor device (0): Tesla V100-SXM2-32GB, Compute Capability 7.0
+2022-01-24 14:28:53.824655: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:237] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2022-01-24 14:28:53.918396: I tensorflow/compiler/jit/xla_compilation_cache.cc:351] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Num GPUs Available:  1
+time costing origin: 38.80462312698364
+time costing coderized: 1.840097188949585
+gen_base_anchors.py
+2022-01-24 14:29:36.337755: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-01-24 14:29:36.991759: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30985 MB memory:  -> device: 0, name: Tesla V100-SXM2-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+2022-01-24 14:29:37.604368: I tensorflow/compiler/xla/service/service.cc:171] XLA service 0x55f6c6177870 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2022-01-24 14:29:37.604404: I tensorflow/compiler/xla/service/service.cc:179]   StreamExecutor device (0): Tesla V100-SXM2-32GB, Compute Capability 7.0
+2022-01-24 14:29:37.608389: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:237] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2022-01-24 14:29:37.695665: I tensorflow/compiler/jit/xla_compilation_cache.cc:351] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Num GPUs Available:  1
+time tensorflow: 11.877463102340698
+time xla: 1.6709699630737305
+map_roi_levels.py
+2022-01-24 14:29:53.020849: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-01-24 14:29:53.695516: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30985 MB memory:  -> device: 0, name: Tesla V100-SXM2-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+2022-01-24 14:29:54.286117: I tensorflow/compiler/xla/service/service.cc:171] XLA service 0x561cf19e1680 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2022-01-24 14:29:54.286146: I tensorflow/compiler/xla/service/service.cc:179]   StreamExecutor device (0): Tesla V100-SXM2-32GB, Compute Capability 7.0
+2022-01-24 14:29:54.290783: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:237] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2022-01-24 14:29:54.381504: I tensorflow/compiler/jit/xla_compilation_cache.cc:351] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Num GPUs Available:  1
+time tensorflow: 7.788120746612549
+time xla: 1.6409130096435547
+offset2bbox.py
+2022-01-24 14:30:05.593948: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-01-24 14:30:06.236554: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30985 MB memory:  -> device: 0, name: Tesla V100-SXM2-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+Num GPUs Available:  1
+time tensorflow: 45.906357765197754
+time xla: 45.667251110076904
+tblr2bbox.py
+2022-01-24 14:31:40.131197: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-01-24 14:31:40.805644: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30985 MB memory:  -> device: 0, name: Tesla V100-SXM2-32GB, pci bus id: 0000:3d:00.0, compute capability: 7.0
+Num GPUs Available:  1
+time costing origin: 4.76837158203125e-07
+time costing coderized: 0.28481388092041016
+valid_flags.py
+Num GPUs Available:  1
+Traceback (most recent call last):
+  File "/home/xuping/compiler-paper/cases/tensorflow/valid_flags.py", line 73, in <module>
+    assert np.allclose(fast_valid(*sargs).numpy(), valid_flags(*sargs).numpy())
+  File "/home/xuping/.conda/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/util/traceback_utils.py", line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/xuping/.conda/envs/tensorflow/lib/python3.9/site-packages/tensorflow/python/framework/func_graph.py", line 1129, in autograph_handler
+    raise e.ag_error_metadata.to_exception(e)
+TypeError: in user code:
+
+    File "/home/xuping/compiler-paper/cases/tensorflow/valid_flags.py", line 49, in fast_valid  *
+        valid_x[:valid_w] = 1
+
+    TypeError: 'Tensor' object does not support item assignment
+
