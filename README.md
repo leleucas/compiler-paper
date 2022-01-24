@@ -62,11 +62,11 @@ RAR 关系忘记考虑了，需要在算法描述中更新
 9. 现在elena内部用的是津铭的方案，后期数据可能需要换成之前indexing的方案测试……
 
 
-文章的切入点：
-introduction 部分对于tvm的描述过于简单，单独对tvm进行描述【揪出view的问题】
-
+###### 2022.1.24讨论
 1. torchscript，jax部分数据不准确
 2. 实验部分：罗列出一个表格，统计出每个case来源于哪个网络，view有哪些操作【参考dlbench】为bechmark取一个名字。
-3. 修改下introduction的第一段
+3. 修改下introduction的第一段首先罗列当前深度学习编译器的火热，deep learning framework的整体流程，热点代码调用第三方库，其他元算子调用编译器支持等，然后切入网络结构，引入我们发现的view的例子，可以举出如valid flags这样的实例。
+4. introduction第三段对于tvm的描述过于简单，单独对tvm进行描述【揪出view的问题】
+
 
 
