@@ -1,0 +1,21 @@
+====== bbox2offset
+time costing origin: 4.6248743534088135
+time costing coderized: 0.36701416969299316
+====== delta2bbox
+time costing origin: 8.000704050064087
+time costing coderized: 1.0618677139282227
+====== gen_base_anchors
+time costing origin: 3.0926473140716553
+time costing coderized: 0.7700090408325195
+====== map_roi_levels
+time costing origin: 2.0496551990509033
+time costing coderized: 0.2562897205352783
+====== offset2bbox
+time costing origin: 7.774952173233032
+time costing coderized: 0.3234269618988037
+====== tblr2bbox
+time costing origin: 4.483368873596191
+time costing coderized: 0.8532590866088867
+====== valid_flags
+time costing origin: 2.4477906227111816
+time costing coderized: 0.693455696105957
