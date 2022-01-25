@@ -1,0 +1,44 @@
+bbox2offset.py
+2022-01-24 06:24:42,769 WARNING: import colorlog failed, will use normal formatter
+2022-01-24 06:24:42,799 INFO: log service ip address is: 10.148.30.21:15120
+2022-01-24 06:24:42,799 INFO: Parrots 0.17.0 | Git hash: 5342ed7e
+time costing origin: 3.2904725074768066
+time costing coderized: 0.19471049308776855
+delta2bbox.py
+2022-01-24 06:24:47,498 WARNING: import colorlog failed, will use normal formatter
+2022-01-24 06:24:47,527 INFO: log service ip address is: 10.148.30.21:56777
+2022-01-24 06:24:47,527 INFO: Parrots 0.17.0 | Git hash: 5342ed7e
+01/24/22 06:24:55.629 (P142181.T142181) [I] Profile::Remove existing record file: profile.txt
+time costing origin: 5.586757659912109
+time costing coderized: 0.7321391105651855
+gen_base_anchors.py
+2022-01-24 06:24:56,415 WARNING: import colorlog failed, will use normal formatter
+2022-01-24 06:24:56,445 INFO: log service ip address is: 10.148.30.21:45283
+2022-01-24 06:24:56,445 INFO: Parrots 0.17.0 | Git hash: 5342ed7e
+time costing origin: 1.685788869857788
+time costing coderized: 0.3030116558074951
+map_roi_levels.py
+2022-01-24 06:24:59,760 WARNING: import colorlog failed, will use normal formatter
+2022-01-24 06:24:59,789 INFO: log service ip address is: 10.148.30.21:31109
+2022-01-24 06:24:59,790 INFO: Parrots 0.17.0 | Git hash: 5342ed7e
+time costing origin: 1.0059099197387695
+time costing coderized: 0.1554093360900879
+offset2bbox.py
+2022-01-24 06:25:02,132 WARNING: import colorlog failed, will use normal formatter
+2022-01-24 06:25:02,161 INFO: log service ip address is: 10.148.30.21:47360
+2022-01-24 06:25:02,161 INFO: Parrots 0.17.0 | Git hash: 5342ed7e
+time costing origin: 4.368380308151245
+time costing coderized: 0.23658037185668945
+tblr2bbox.py
+2022-01-24 06:25:07,963 WARNING: import colorlog failed, will use normal formatter
+2022-01-24 06:25:07,993 INFO: log service ip address is: 10.148.30.21:53769
+2022-01-24 06:25:07,993 INFO: Parrots 0.17.0 | Git hash: 5342ed7e
+01/24/22 06:25:13.250 (P142449.T142449) [I] Profile::Remove existing record file: profile.txt
+time costing origin: 2.6597535610198975
+time costing coderized: 0.7159490585327148
+valid_flags.py
+2022-01-24 06:25:14,014 WARNING: import colorlog failed, will use normal formatter
+2022-01-24 06:25:14,044 INFO: log service ip address is: 10.148.30.21:32275
+2022-01-24 06:25:14,044 INFO: Parrots 0.17.0 | Git hash: 5342ed7e
+time costing origin: 1.2928194999694824
+time costing coderized: 0.6005306243896484

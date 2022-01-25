@@ -1,0 +1,31 @@
+bbox2offset.py
+time costing origin: 88.30500721931458
+time costing jax: 0.2355656623840332
+delta2bbox.py
+time costing origin: 134.49620747566223
+time costing jax: 2.610631227493286
+gen_base_anchors.py
+time costing origin: 25.60203742980957
+time costing jax: 0.5175230503082275
+map_roi_levels.py
+/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/numpy/lax_numpy.py:6610: FutureWarning: `a_min` and `a_max` keyword arguments to ndarray.clip are deprecated in favor of `min` and `max` for compatibility with numpy. They will be removed in JAX 0.22.2
+  warnings.warn('`a_min` and `a_max` keyword arguments to ndarray.clip are deprecated '
+/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/numpy/lax_numpy.py:6610: FutureWarning: `a_min` and `a_max` keyword arguments to ndarray.clip are deprecated in favor of `min` and `max` for compatibility with numpy. They will be removed in JAX 0.22.2
+  warnings.warn('`a_min` and `a_max` keyword arguments to ndarray.clip are deprecated '
+time costing origin: 3.9128975868225098
+time costing jax: 0.5094671249389648
+offset2bbox.py
+time costing origin: 11.91747522354126
+time costing jax: 0.02356863021850586
+tblr2bbox.py
+time costing origin: 0.9544610977172852
+time costing coderized: 0.0017549991607666016
+valid_flags.py
+Traceback (most recent call last):
+  File "/home/xuping/compiler-paper/cases/jax/valid_flags.py", line 39, in <module>
+    assert jnp.allclose(valid_flags(*sargs), fast_valid(*sargs))
+  File "/home/xuping/compiler-paper/cases/jax/valid_flags.py", line 19, in valid_flags
+    valid_x[:valid_w] = 1
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/numpy/lax_numpy.py", line 6701, in _unimplemented_setitem
+    raise TypeError(msg.format(type(self)))
+TypeError: '<class 'jaxlib.xla_extension.DeviceArray'>' object does not support item assignment. JAX arrays are immutable. Instead of ``x[idx] = y``, use ``x = x.at[idx].set(y)`` or another .at[] method: https://jax.readthedocs.io/en/latest/_autosummary/jax.numpy.ndarray.at.html
