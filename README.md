@@ -68,5 +68,10 @@ RAR 关系忘记考虑了，需要在算法描述中更新
 3. 修改下introduction的第一段首先罗列当前深度学习编译器的火热，deep learning framework的整体流程，热点代码调用第三方库，其他元算子调用编译器支持等，然后切入网络结构，引入我们发现的view的例子，可以举出如valid flags这样的实例。
 4. introduction第三段对于tvm的描述过于简单，单独对tvm进行描述【揪出view的问题】
 
+###### 2022.2.14
+1. 后处理阶段需要有一些术语：bbox以及。。。【周洋】
+2. 可以通过view实现inplace操作，但是inplace与view并不是同一类问题，当前提出的方案也适用于单独的inplace更新问题
+3. memory optimization章节的分段讨论，或者分章节讨论【标题更改】
+
 
 
