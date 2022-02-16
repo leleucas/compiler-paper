@@ -73,6 +73,7 @@ RAR 关系忘记考虑了，需要在算法描述中更新
 2. pure function中对于inplace update问题支持的局限性【jax，miya】
 3. 可以通过view实现inplace操作，但是inplace与view并不是同一类问题，当前提出的方案也适用于单独的inplace更新问题
 4. memory optimization章节的分段讨论，或者分章节讨论【标题更改】
+5. 针对python 语法特征的embedding的必要性【tvm或者深度学习编译器】，在加速卡上的代码生成。
 
 
 
