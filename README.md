@@ -76,4 +76,4 @@ RAR 关系忘记考虑了，需要在算法描述中更新
 5. 针对python 语法特征的embedding的必要性【tvm或者深度学习编译器】，在加速卡上的代码生成。
 
 
-
+通过翻译上层python，转换成domain-specific compiler中间表示而需要新生成的张量，内存空间申请问题是一个值得注意的问题。在torch，mlir等软件的设计上都得到了充分的重视。
