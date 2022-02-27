@@ -13,6 +13,7 @@
 - 文章关键部分描述的充实，主要为：在introduction部分新增tensorref的概念讨论，第三章framework或者说算法思想的部分；算法具体实现部分的描述；实验部分文字描述以及实验图2增加一些case的性能测试，扩展成一个双栏图。
 - 实验部分的数据问题
 - 时间节点讨论
+- tensor creation & tensor generation
 
 
 ##### 近期需求
