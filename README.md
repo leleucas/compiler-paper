@@ -9,11 +9,12 @@
 
 
 ##### 下次会议需要讨论的内容
-- 文章中提到的对于view的解析以及优化方案，相比于SSA是种什么关系，以及对于像mlir中的memref的关系，考虑新增tensorref的概念。【考虑和控制流问题的融合】
+- 文章中提到的对于view的解析以及优化方案，相比于SSA是种什么关系，以及对于像mlir中的memref的关系，考虑新增tensorref的概念。【考虑和控制流问题的融合】【和torchscirpt的相同之处是使用了相同的张量与存储表示方法，不同之处在于torchscirpt将slice等表示成了算子，而我们直接将其解析成了张量，并将slice等的操作产生的结果记录在tensor的metadata中，这里可以解释下是考虑到computation的优化，减少了一些operation的分析，简化了操作？】
 - 文章关键部分描述的充实，主要为：在introduction部分新增tensorref的概念讨论，第三章framework或者说算法思想的部分；算法具体实现部分的描述；实验部分文字描述以及实验图2增加一些case的性能测试，扩展成一个双栏图。
 - 实验部分的数据问题
 - 时间节点讨论
 - tensor creation & tensor generation
+- 在描述中引入stage的概念【】
 
 
 ##### 近期需求
