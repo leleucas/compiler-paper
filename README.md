@@ -14,7 +14,8 @@
 - 实验部分的数据问题
 - 时间节点讨论
 - tensor creation & tensor generation
-- 在描述中引入stage的概念【】
+- 在描述中引入stage的概念
+- 统一修改标题首字母大小写的问题，图示部分caption下面描述的问题
 
 
 ##### 近期需求
