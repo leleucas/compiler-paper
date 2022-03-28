@@ -8,6 +8,12 @@
 - 实验部分：elena vs tvm, elena vs 未使用优化的版本，elena vs jax vs torch vs tensorflow, 在不同GPU上的性能对比结果。
 
 
+##### 3.27
+- figure 1 字体太小
+- view的来源，在pythonic 代码中，这种语法挺常见的，在原生的python中，很自由的表达view，但是这种操作进入dlcompiler之后，有哪些比较难处理的地方。
+- torchScript 不能说端到端，缺乏对于basic indexing的融合，依赖于本身的runtime，在端部署有局限性。
+
+
 ##### 下次会议需要讨论的内容
 - 文章中提到的对于view的解析以及优化方案，相比于SSA是种什么关系，以及对于像mlir中的memref的关系，考虑新增tensorref的概念。【考虑和控制流问题的融合】【和torchscirpt的相同之处是使用了相同的张量与存储表示方法，不同之处在于torchscirpt将slice等表示成了算子，而我们直接将其解析成了张量，并将slice等的操作产生的结果记录在tensor的metadata中，这里可以解释下是考虑到computation的优化，减少了一些operation的分析，简化了操作？】
 - 文章关键部分描述的充实，主要为：在introduction部分新增tensorref的概念讨论，第三章framework或者说算法思想的部分；算法具体实现部分的描述；实验部分文字描述以及实验图2增加一些case的性能测试，扩展成一个双栏图。
