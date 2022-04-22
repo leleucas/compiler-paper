@@ -1,0 +1,89 @@
+bbox2offset.py
+time costing origin: 93.44374346733093
+time costing jax: 0.29976487159729004
+delta2bbox.py
+time costing origin: 141.30382680892944
+time costing jax: 2.6904428005218506
+gen_base_anchors.py
+time costing origin: 27.219614267349243
+time costing jax: 0.43996167182922363
+map_roi_levels.py
+/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/numpy/lax_numpy.py:6610: FutureWarning: `a_min` and `a_max` keyword arguments to ndarray.clip are deprecated in favor of `min` and `max` for compatibility with numpy. They will be removed in JAX 0.22.2
+  warnings.warn('`a_min` and `a_max` keyword arguments to ndarray.clip are deprecated '
+/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/numpy/lax_numpy.py:6610: FutureWarning: `a_min` and `a_max` keyword arguments to ndarray.clip are deprecated in favor of `min` and `max` for compatibility with numpy. They will be removed in JAX 0.22.2
+  warnings.warn('`a_min` and `a_max` keyword arguments to ndarray.clip are deprecated '
+time costing origin: 4.555253267288208
+time costing jax: 0.5590105056762695
+valid_flags.py
+Traceback (most recent call last):
+  File "/home/xuping/compiler-paper/cases/jax/valid_flags.py", line 39, in <module>
+    assert jnp.allclose(valid_flags(*sargs), fast_valid(*sargs))
+  File "/home/xuping/compiler-paper/cases/jax/valid_flags.py", line 19, in valid_flags
+    valid_x[:valid_w] = 1 
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/numpy/lax_numpy.py", line 6701, in _unimplemented_setitem
+    raise TypeError(msg.format(type(self)))
+TypeError: '<class 'jaxlib.xla_extension.DeviceArray'>' object does not support item assignment. JAX arrays are immutable. Instead of ``x[idx] = y``, use ``x = x.at[idx].set(y)`` or another .at[] method: https://jax.readthedocs.io/en/latest/_autosummary/jax.numpy.ndarray.at.html
+offset2bbox.py
+Traceback (most recent call last):
+  File "/home/xuping/compiler-paper/cases/jax/offset2bbox.py", line 64, in <module>
+    assert jnp.allclose(offset2bbox(*sargs), fast_bbox(*sargs))
+  File "/home/xuping/compiler-paper/cases/jax/offset2bbox.py", line 43, in offset2bbox
+    pred_boxes[:, 0::4] = pred_ctr_x - 0.5 * pred_w
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/numpy/lax_numpy.py", line 6701, in _unimplemented_setitem
+    raise TypeError(msg.format(type(self)))
+TypeError: '<class 'jaxlib.xla_extension.DeviceArray'>' object does not support item assignment. JAX arrays are immutable. Instead of ``x[idx] = y``, use ``x = x.at[idx].set(y)`` or another .at[] method: https://jax.readthedocs.io/en/latest/_autosummary/jax.numpy.ndarray.at.html
+tblr2bbox.py
+Traceback (most recent call last):
+  File "/home/xuping/compiler-paper/cases/jax/tblr2bbox.py", line 74, in <module>
+    assert jnp.allclose(fast_tblr(*sargs), tblr2bboxes(*sargs))
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/traceback_util.py", line 165, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/api.py", line 426, in cache_miss
+    out_flat = xla.xla_call(
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/core.py", line 1671, in bind
+    return call_bind(self, fun, *args, **params)
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/core.py", line 1683, in call_bind
+    outs = top_trace.process_call(primitive, fun, tracers, params)
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/core.py", line 596, in process_call
+    return primitive.impl(f, *tracers, **params)
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/dispatch.py", line 142, in _xla_call_impl
+    compiled_fun = _xla_callable(fun, device, backend, name, donated_invars,
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/dispatch.py", line 169, in _xla_callable_uncached
+    return lower_xla_callable(fun, device, backend, name, donated_invars,
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/profiler.py", line 206, in wrapper
+    return func(*args, **kwargs)
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/dispatch.py", line 197, in lower_xla_callable
+    jaxpr, out_avals, consts = pe.trace_to_jaxpr_final(
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/profiler.py", line 206, in wrapper
+    return func(*args, **kwargs)
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/interpreters/partial_eval.py", line 1623, in trace_to_jaxpr_final
+    jaxpr, out_avals, consts = trace_to_subjaxpr_dynamic(fun, main, in_avals)
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/interpreters/partial_eval.py", line 1594, in trace_to_subjaxpr_dynamic
+    ans = fun.call_wrapped(*in_tracers_)
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/linear_util.py", line 166, in call_wrapped
+    ans = self.f(*args, **dict(self.params, **kwargs))
+  File "/home/xuping/compiler-paper/cases/jax/tblr2bbox.py", line 48, in tblr2bboxes
+    loc_decode[:, :2] *= h  # tb
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/core.py", line 527, in __setitem__
+    def __setitem__(self, idx, val): return self.aval._setitem(self, idx, val)
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/numpy/lax_numpy.py", line 6701, in _unimplemented_setitem
+    raise TypeError(msg.format(type(self)))
+jax._src.traceback_util.UnfilteredStackTrace: TypeError: '<class 'jax.interpreters.partial_eval.DynamicJaxprTracer'>' object does not support item assignment. JAX arrays are immutable. Instead of ``x[idx] = y``, use ``x = x.at[idx].set(y)`` or another .at[] method: https://jax.readthedocs.io/en/latest/_autosummary/jax.numpy.ndarray.at.html
+
+The stack trace below excludes JAX-internal frames.
+The preceding is the original exception that occurred, unmodified.
+
+--------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xuping/compiler-paper/cases/jax/tblr2bbox.py", line 74, in <module>
+    assert jnp.allclose(fast_tblr(*sargs), tblr2bboxes(*sargs))
+  File "/home/xuping/compiler-paper/cases/jax/tblr2bbox.py", line 48, in tblr2bboxes
+    loc_decode[:, :2] *= h  # tb
+  File "/home/xuping/.conda/envs/jax/lib/python3.9/site-packages/jax/_src/numpy/lax_numpy.py", line 6701, in _unimplemented_setitem
+    raise TypeError(msg.format(type(self)))
+TypeError: '<class 'jax.interpreters.partial_eval.DynamicJaxprTracer'>' object does not support item assignment. JAX arrays are immutable. Instead of ``x[idx] = y``, use ``x = x.at[idx].set(y)`` or another .at[] method: https://jax.readthedocs.io/en/latest/_autosummary/jax.numpy.ndarray.at.html
