@@ -93,6 +93,10 @@ cmake -GNinja -Bbuild \
     - 如何设置下载源（pip和conda）:https://blog.csdn.net/program_developer/article/details/79677557
     - conda search cudatoolkit
     - conda search cudnn
+    - conda config --show-sources
+    - conda config --add channels url
+    - conda config --remove channels url
+    - conda config --show_url_yes true
 
 ### tmux
 https://www.ruanyifeng.com/blog/2019/10/tmux.html
