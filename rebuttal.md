@@ -39,17 +39,17 @@ types of fusion are performed in this work, and which ones show up in the benchm
 
 
 ##### 实验方面
-1）实验设置 （reviewer1【1，3】reviewer3【1】）
-2）view对于存储的影响 （reviewer1【1】）
-3）对于实验结果的分析 （reviewer3【1】）
+- 实验设置 （reviewer1【1，3】reviewer3【1】）
+- view对于存储的影响 （reviewer1【1】）
+- 对于实验结果的分析 （reviewer3【1】）
 
 ##### view的分类方面
-1）解释清楚view为什么分成那么几类 （reviewer1【2】reviewer3【3】）
-2）reference track分析的方法 （reviewer4【1】）
-3）解释清楚类别分别对应什么测例 （reviewer2【1】）
+- 解释清楚view为什么分成那么几类 （reviewer1【2】reviewer3【3】）
+- reference track分析的方法 （reviewer4【1】）
+- 解释清楚类别分别对应什么测例 （reviewer2【1】）
 
 ##### schedule优化方面
-1）优化细节 （reviewer4【2】reviewer1在comment中也提到了。）
+- 优化细节 （reviewer4【2】reviewer1在comment中也提到了。）
 
 ##### 为什么仅选择了mmdection网络 （reviewer1【4】）
 
