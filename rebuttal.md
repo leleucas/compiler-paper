@@ -58,14 +58,15 @@ types of fusion are performed in this work, and which ones show up in the benchm
 
 1. Elaborations on view categories and dependence tracking. 
 - The categorization is primarily based on whether the view varies the metadata compared with the tensor definition. Next, whether the view context 
-modifies the underlying tensor data is the other consideration of the categorization. According to the RAR, RAW, WAW and WAR, different view contexts are exploited to keep the consistent read and write order with the source satements. Besides, we believe seven categories are enough for the isssue discussed in the aricle.
+modifies the underlying tensor data is the other consideration of the categorization. According to the RAR, RAW, WAW and WAR, different view contexts are exploited to keep the consistent read and write order with the source satements. 【分类是为了后续依赖关系】Besides, we believe seven categories are enough for the isssue discussed in the aricle.
 - Reference semantic allows multiple tensor views in the high-level language refer to the same memory, and modifications in a view would result in modifications on the other views of the same tensor. The dependence tracking approach mainly analyzes the RAR, RAW, WAW and WAR data dependence relationships based the seven categorized tensor views, which essentially lies in the reference semantic of various contexts.
 - The source example in Figure 4 enumerates six types of tensor views. Taking tensor C as illustration, tensor C in stage 1 refers to TWD since the corresponding operation define the tensor. Tensor C in stage 2 refers to TRD since the operation reads the definition data. Tensor C in stage 3 refers
 to VRD since the operation reads the definition data and varies metadata of C. Tensor C in stage 4 refers to VWS since the operation modifies data after the definition and varies metadata of C. Tensor C in stage 5 and stage 6 are VRS since the operation reads the modified data, and the operation in stage 6
 varies the metadata of C. If we use the statement C = E + k to substitute the operation in stage 4, then the substituted C refers to TWS since the operation modifies the definition data and has not changed the metadata.
 
 2. Optimizations.
-- 
+- In this article our fusion scope includes 116 basic operations including various arithmetic and logical operations, tensor construction operations like stack and permutation, advanced indexing operations, activation operations, view-related operations and some misc operations like where. Besides, most arithmetic and logical operations, tensor construction operations and view-related operations show up in the experimental cases we use.
+- The proposal of views in the article brings optimizations both on performance and memory utilization. In terms of performance, the su
 
 3. Experiment technique details.
 
