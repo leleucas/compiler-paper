@@ -37,12 +37,6 @@ are fused and to what extent. The state of the art frameworks considered go to g
 types of fusion are performed in this work, and which ones show up in the benchmarks considered?
 
 
-
-##### 实验方面
-- 实验设置 （reviewer1【1，3】reviewer3【1】）
-- view对于存储的影响 （reviewer1【1】）
-- 对于实验结果的分析 （reviewer3【1】）
-
 ##### view的分类方面
 - 解释清楚view为什么分成那么几类 （reviewer1【2】reviewer3【3】）
 - reference track分析的方法 （reviewer4【1】）
@@ -50,12 +44,31 @@ types of fusion are performed in this work, and which ones show up in the benchm
 
 ##### schedule优化方面
 - 优化细节 （reviewer4【2】reviewer1在comment中也提到了。）
+- view对于存储的优化，以及跟operator优化的关系。
+
+##### 实验方面
+- 实验设置 （reviewer1【1，3】reviewer3【1】）
+- tvm缺乏哪些view操作的支持 （reviewer3【2】）
+- view对于存储的影响 （reviewer1【1】）
+- 对于实验结果的分析 （reviewer3【1】）
 
 ##### 为什么仅选择了mmdection网络 （reviewer1【4】）
-
-##### tvm缺乏哪些view操作的支持 （reviewer3【2】）
-
 ##### torchscript不属于compiler。。。（reviewer3【4】）
+
+
+1. Elaborations on view categories and dependence tracking. 
+- The categorization is primarily based on whether the view varies the metadata compared with the tensor definition. Next, whether the view context 
+modifies the underlying tensor data is the other consideration of the categorization. According to the RAR, RAW, WAW and WAR, different view contexts are exploited to keep the consistent read and write order with the source satements. Besides, we believe seven categories are enough for the isssue discussed in the aricle.
+- Reference semantic allows multiple tensor views in the high-level language refer to the same memory, and modifications in a view would result in modifications on the other views of the same tensor. The dependence tracking approach mainly analyzes the RAR, RAW, WAW and WAR data dependence relationships based the seven categorized tensor views, which essentially lies in the reference semantic of various contexts.
+- The source example in Figure 4 enumerates six types of tensor views. Taking tensor C as illustration, tensor C in stage 1 refers to TWD since the corresponding operation define the tensor. Tensor C in stage 2 refers to TRD since the operation reads the definition data. Tensor C in stage 3 refers
+to VRD since the operation reads the definition data and varies metadata of C. Tensor C in stage 4 refers to VWS since the operation modifies data after the definition and varies metadata of C. Tensor C in stage 5 and stage 6 are VRS since the operation reads the modified data, and the operation in stage 6
+varies the metadata of C. If we use the statement C = E + k to substitute the operation in stage 4, then the substituted C refers to TWS since the operation modifies the definition data and has not changed the metadata.
+
+2. Optimizations.
+- 
+
+3. Experiment technique details.
+
 
 
 
