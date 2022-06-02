@@ -32,7 +32,20 @@ Besides, the test cases in our experiment section also include different kinds o
 by expanding Table 4 to clarify more example of categorized examples.
 
 **Reviewer 3:**
-1. The experiment setup could be referred to the 4th item of the list in our respond to **Reviewer1**.
-2. 
+1. The experiment setup could be referred to the 4th item of the list in our responds to **Reviewer1**. The operator fusion in our implementation mainly supports element-wise operations. Some complex code structures like branch statements and unsupported operations such as new_tensor would still result in the division of graphs and generate more device kernels. Table 4 reveals the reduced kernels due to the support of views. As for delta2bbox, 8 device kernels are generated without scheduling views which are divided by a new_tensor operation, four adjacent view operations, two adjacent view operations，
+four adjacent view operations, four adjacent view operations, four adjacent view operations, and two adjacent view operations. And the
+device kernels are reduced two due to the support of all the view operations in the case.
+2. Tensor Expression (TE) are used to describe tensor computations in TVM, which is a SSA format IR. Hence, non-SSA view syntax in the high-level
+language could not be directly expressed in TE, especially inplace udpate with respect to basic indexing operations including sophistacated index computations.
+4. The categorization is primarily based on whether the view varies the metadata compared with the tensor definition. Next, whether the view context 
+modifies the underlying tensor data is the other consideration of the categorization, since that read operations retrieve the correct values
+should be ensured. According to the analysis of RAR, RAW, WAW and WAR, the seven view types are enough to keep the consistent read and write order 
+with the source satements, and keep the correct metadata in the meanwhile.
+4. We quite agree TorchScript are mainly used to create serializable models from Pytorch code. However, TorchScript lowers operations 
+and provide lots of optimization passes including operation fusion. Hence, we provide the experemental result as a reference.
 
 **Reviewer 4:**
+1. Reference semantic allows multiple tensor views in the high-level language refer to the same memory, and modifications in a view would result in modifications on the other views of the same tensor. The dependence tracking approach mainly analyzes the RAR, RAW, WAW and WAR data dependence relationships based the seven categorized tensor views, which essentially lies in the reference semantic of various contexts.
+2. In this article our fusion scope includes variou element-wise operations satisfying SSA Tensor Expression IR format
+ including various arithmetic and logical operations, tensor construction operations like stack and permutation, activation operations, etc. 
+ Besides, non-SSA element-wise operations in terms of views are also supported.
