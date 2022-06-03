@@ -9,21 +9,23 @@ The replies to the common and distinct questions raised by the reviewers are giv
 
 
 **Reviewer1**
-1. Sec4.4 enumerates the main schedule primitives we applied. Besides, We'd like to formalize Sec4.4 to clarify more schedule details.
-2.  The profiling of delta2bbox shows that global data movement is reduced %. We'd like to add a chart for quantized memory optimizations.
-3. Please refer to the **Common issues** for the replies to the view categorization and experimental setup, respectively.
+1. Sec4.4 enumerates the main schedule primitives we applied. Besides, we'd like to formalize Sec4.4 to clarify more schedule details.
+2.  The profiling of delta2bbox shows that global data movement is reduced %. Besides, we'd like to add a chart for quantized memory optimizations.
+3. Please refer to **Common issues** for the replies to the view categorization and experimental setup, respectively.
 4. Networks of MMDetection contain amounts of typical view-related operations. However, the proposal is not limited to MMDetction networks.
+
 
 **Reviewer2**
 1. The tensor C of the six statements in the example source function corresponds to six tensor view categories labeled in the Tensor C column of the right subgraph in Figure 4. Besides, we'd like to expand Table 4 to clarify more detailed examples in the python functions.
 
+
 **Reviewer3**
-1. Please refer to the **Common issues** for the replies to the view categorization and experimental setup, respectively.
+1. Please refer to **Common issues** for the replies to the view categorization and experimental setup, respectively.
 2. Delta2bbox is divided into eight device kernels by views and an unsupported operation, and the kernels are reduced due to the support of views. Besides, we'd like to expand sec5.1 to clarify more details of Table 4. 
 3. Non-SSA view syntax could not be intuitively expressed in TE of TVM, especially in-place updates concerning indexing operations.
 4. Since TorchScript provides plenty of optimization passes including operation fusion, we provide the result as a reference here.
 
+
 **Reviewer4**
-1. Reference semantics allows that modifications in a view result in modifications on the 
-other views. The dependence tracking approach mainly analyzes the read and write memory activities based on the seven categorized tensor views, which are essentially rooted in the reference semantics.
-2. Please refer to the **Common issues** for the replies to fusion types.
+1. Reference semantics allows that modifications in a view result in modifications on the other views. The dependence tracking approach mainly analyzes the read and write memory activities based on the seven categorized tensor views, which are essentially rooted in the reference semantics.
+2. Please refer to **Common issues** for the replies to fusion types.
